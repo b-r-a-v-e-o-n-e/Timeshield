@@ -32,7 +32,7 @@ max_size_kb=1
 
 clear
 # Banner
-echo "▌║█║▌│║▌│║▌║▌█║ ★ T I M E S H I F T ★ ▌│║▌║▌│║║▌█║▌║█"
+echo "▌║█║▌│║▌│║▌║▌█║ ★ T I M E S H I L D ★ ▌│║▌║▌│║║▌█║▌║█"
 echo "        for OpenWrt versions 21.x, 22.x, 23.x "
 echo ""
 echo "                 $CURRENT_DATASTAMP"
