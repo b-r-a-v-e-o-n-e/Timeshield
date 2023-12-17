@@ -1,7 +1,7 @@
 # Timeshild script for OpenWRT v. 21.xx, 22.xx, 23.xx (not tested for 18.xx and 19.xx)
 
 # This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# See LICENSE for more information.
 #
 # Author: Kristiyan Georgiev <brave@brave-design.org>
 
