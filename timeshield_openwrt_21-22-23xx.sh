@@ -19,7 +19,7 @@ CURRENT_FULLTIME=$(date +"%H:%M")
 CURRENT_HOUR=$(date +"%H")
 
 # WAN interface
-WAN_INTERFACE="wlan0"
+WAN_INTERFACE="wan" # Type interface by name 
 
 # Hours to block WAN interface
 BLOCK_HOURS="02 08 10 14 22"  # For example - block in 02, 08, 10, 14 and 22 hours
@@ -47,12 +47,12 @@ if echo "$BLOCK_HOURS" | grep -wq "$CURRENT_HOUR"; then
     echo "WAN TRAFFIC STOP"
     echo "Current time is: $CURRENT_FULLTIME"
     echo "Interface: $WAN_INTERFACE is OFF"
-    ip link set $WAN_INTERFACE down
+    ubus call network.interface.$WAN_INTERFACE down
 else
     echo "WLAN TRAFFIC START"
     echo "Current time is: $CURRENT_FULLTIME"
     echo "Interface: $WAN_INTERFACE is ON"
-    ip link set $WAN_INTERFACE up
+    ubus call network.interface.$WAN_INTERFACE up
     
 fi
 
