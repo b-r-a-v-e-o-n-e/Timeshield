@@ -50,18 +50,12 @@ if echo "$BLOCK_HOURS" | grep -wq "$CURRENT_HOUR"; then
     echo "WAN TRAFFIC STOP"
     echo "Current time is: $CURRENT_FULLTIME"
     echo "Interface: $WAN_INTERFACE is OFF"
-    uci set network.$WAN_NAME.disabled='1'
-    uci commit network
-    /etc/init.d/network reload
-#    ip link set $WAN_INTERFACE down # for version 21xx,22xx,23xx
+    ubus call network.interface.$WAN_INTERFACE down
 else
     echo "WLAN TRAFFIC START"
     echo "Current time is: $CURRENT_FULLTIME"
     echo "Interface: $WAN_INTERFACE is ON"
-    uci set network.$WAN_NAME.disabled='0'
-    uci commit network
-    /etc/init.d/network reload
-#    ip link set $WAN_INTERFACE up # for version 21xx,22xx,23xx
+    ubus call network.interface.$WAN_INTERFACE up
     
 fi
 
